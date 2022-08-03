@@ -5,3 +5,8 @@ Make sure to add the env variables with the bucket access:
 - Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 
 For more info, check https://github.com/soto-project/soto
+
+How to reproduce:
+1. Run locally
+2. Go to http://localhost:8080/deleteImage
+3. See `NotImplemented` error
