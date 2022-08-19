@@ -32,7 +32,7 @@ func uploadImageToS3(fileName: String, data: Data, client: AWSClient) async thro
 }
 
 func removeImageFromS3(fileName: String, client: AWSClient) async throws {
-    let s3 = S3(client: client, endpoint: spaceBaseUrl).with(middlewares: [AWSLoggingMiddleware()])
+    let s3 = S3(client: client, endpoint: spaceBaseUrl).with(middlewares: [ContentLengthHeaderMiddleware(), AWSLoggingMiddleware()])
     let deleteObjectRequest = S3.DeleteObjectRequest(
         bucket: bucketName,
         key: fileName
